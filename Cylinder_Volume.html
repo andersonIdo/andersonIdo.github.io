@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 ylinder Volme</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 3: Calculate Cylinder Volume</h1>
+            <h2>Anderson Gbalo</h2>
+        </header>
+        <main>
+            
+            <label>Enter Radius: <input type="text" id= 2></label>
+          <label>Enter Height: <input type="text" id=4></label>
+            <label><button onclick="addNumbers()">Add Numbers</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             /* Input: V = πr2h
+                       Radius = 2
+                       Height = 4
+             *Processing:  V = 3.14 * 2 * 4
+             *Output: Cylinder Volume
+             */
+             function Payment(){
+            //INPUT
+            let Cylinder = parseFloat(document.getElementById('Hours').value);
+            let overtime_pay_rate =parseFloat(document.getElementById('constant').value)
+            let overtime_hours =parseFloat(document.getElementById('constant').value)
+            
+            //Calculate payment.
+            let Cylider_volume = 3.14 * 2 * 4
+            //Display the Kilograms value to the user
+            document.getElementById('output').innerHTML = Total_Payment_After_Tax.toFixed(0);
+        }
+        </script>
+    </body>
+</html>
