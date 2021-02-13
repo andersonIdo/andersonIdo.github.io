@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 Template</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 6: Footwear</h1>
+            <h2>Anderson Gbalo</h2>
+        </header>
+        <main>
+            <h3>Weather Shoes</h3>
+            
+            <!-- The second value will be selected initially -->
+            <select name="choice" id="weather">
+            <option value="hot">Hot</option>
+            <option value="rain" >Rain</option>
+            <option value="snow">Snow</option>
+            <option value = "unknown" selected>Unknown</option>
+            </select>
+
+            
+            <label><button onclick="footwear()">Footwear</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             
+            function footwear(){
+    //Input:Get weather and Footwear 
+    //Progressing:Use Combo Box in javaScript to select the correct Footwear base on the weather.
+    //Output:Show the correct Footwear 
+
+    // Input -get number1 and Number2 from the user
+    // Progressing - Determine the correct Footwear 
+    let footwear
+    let weather = document.getElementById("weather").value
+     
+        if (weather == "hot") {
+            footwear = "sandals";
+        } else if (weather == "rain") {
+            footwear = "galoshes";
+        } else if (weather == "snow") { 
+            footwear = "Boots";
+        } else {
+            footwear = "Shoes";
+        }
+
+        document.getElementById('output').innerHTML = footwear
+    }
+        </script>
+    </body>
+</html>
