@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 3: Total Amount</h1>
+            
+        </header>
+        <main>
+            
+        
+            <label>Subtotal: <input type="text" id="subtotal"></label>
+            <label><button onclick="TotalAmount()">Click here</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function TotalAmount() {
+             //Input: Get input from my computer's clock
+             //Progressing: use if statement with a compound condition
+             //Output: Display the message to the user, Total Amount with the discount.
+         
+             //Input
+             let now = new Date();
+             let d = new Date();
+             let weekday = new Array(7);
+             weekday[0] = "Sunday";
+             weekday[1] = "Monday";
+             weekday[2] = "Tuesday";
+             weekday[3] = "Wednesday";
+             weekday[4] = "Thursday";
+             weekday[5] = "Friday";
+             weekday[6] = "Saturday";
+             let TotalAmount
+             let subtotal = parseFloat(document.getElementById('subtotal').value);
+
+             //Progressing:
+             if ((subtotal > 50 ) && (weekday == 2 || weekday == 3)) {
+                 TotalAmount = ((subtotal - (0.10 * subtotal)) + (subtotal * 0.06))}
+             else {
+                 TotalAmount = (0.06 * subtotal) + subtotal
+             }
+             document.getElementById('output').innerHTML = '$' + TotalAmount.toFixed(2) ;
+            }
+        </script>
+    </body>
+</html>
