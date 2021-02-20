@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 3: Sleep In</h1>
+            
+        </header>
+        <main>
+            
+        
+          
+            <label><button onclick="sleepIn()">Click here</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function sleepIn() {
+             //Input: Get input from my computer's clock
+             //Progressing: use if statement with a compound condition
+             //Output: Display the message to the user, Get up for weekday or Sleep in if not.
+         
+             //Input
+             let now = new Date();
+             let month = now.getMonth();
+             let dayOfMonth = now.getDate();
+             let dayOfWeek = now.getDay();
+             let NewYearDay = now.getMonth(1) && now.getDate(1);
+             let independanceDay = now.getMonth(7) && now.getDate(4);
+             let Christmas = now.getMonth(12) && now.getDate(25);
+             let holiday
+             let message
+             //Progressing:
+             if (dayOfWeek == 6 || dayOfWeek == 7) {
+                 message = "Sleep in."}
+             else if(holiday == (NewYearDay || independanceDay || Christmas)){
+                 message = "Sleep in."
+             }
+             else {
+                message = "Get up!"
+             }
+
+             document.getElementById('output').innerHTML = message;
+             
+            }
+        </script>
+    </body>
+</html>
