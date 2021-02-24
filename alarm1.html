@@ -32,13 +32,13 @@
              let month = now.getMonth();
              let dayOfMonth = now.getDate();
              let dayOfWeek = now.getDay();
-             let NewYearDay = now.getMonth(1) && now.getDate(1);
-             let independanceDay = now.getMonth(7) && now.getDate(4);
-             let Christmas = now.getMonth(12) && now.getDate(25);
+             let NewYearDay = now.getMonth(0) && now.getDate(1);
+             let independanceDay = now.getMonth(6) && now.getDate(4);
+             let Christmas = now.getMonth(11) && now.getDate(25);
              let holiday
              let message
              //Progressing:
-             if (dayOfWeek == 6 || dayOfWeek == 7) {
+             if (dayOfWeek == 6 || dayOfWeek == 0) {
                  message = "Sleep in."}
              else if(holiday == (NewYearDay || independanceDay || Christmas)){
                  message = "Sleep in."
