@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 3: sumOdds</h1>
+            
+        </header>
+        <main>
+            
+        
+            <label>Enter Number: <input type="text" id="number"></label>
+            <label><button onclick="sumOdds()">Click here</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function sumOdds() {
+             //Input: Get input form user
+             //Progressing: use for loop from starting i value to the number given by the user
+             //Output: Display the message to the user, Total Amount with the discount.
+         
+             //Input: Get number value from user
+             let input= parseInt(document.getElementById('number').value);
+            //  console.log(/'Input: ' + input);
+             //Progressing:
+            // // output = '';
+            //  for (let i = 1; i <= number; i +=2){
+            //     output = output + 'value:' + i + '<br>';
+            //  }
+            let isOdd = 0
+            let array;
+            let sum = 0;
+            
+            if (input % 2){
+                 isOdd = input
+            } else {
+                 isOdd= input -1
+            }
+
+             for (let i = 1; i <=isOdd ; i += 2){
+                 if (i == 1) {
+                    array = i;
+                    sum += i;
+                 } else {
+                    array += (' + ' + i);
+                    sum += i;
+                }
+                    
+             }
+
+            array += (' = ' + sum);
+
+             document.getElementById('output').innerHTML =  array;
+            }
+        </script>
+    </body>
+</html>
