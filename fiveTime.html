@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 9: fivetime</h1>
+            
+        </header>
+        <main>
+            
+        
+            <label>ProductNum: <input type="text" id="ProductNum"></label>
+            <label>UpperNum: <input type="text" id="UpperNum"></label>
+            <label><button onclick="Multiplication()">Click here</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function Multiplication(){
+                  let ProductNum = 5
+                  let UpperNum = 12
+                  let output = ""
+                  let Answer = 0
+
+                  for (let i = 1; i <= UpperNum; i++) {
+                      Answer = i * ProductNum;
+                      output += ProductNum + " x " + i +  " = " + Answer + "<br>"
+                  }
+             document.getElementById('output').innerHTML = output;
+            }
+        </script>
+    </body>
+</html>
