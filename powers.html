@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 9: power</h1>
+            
+        </header>
+        <main>
+            
+            <label><button onclick="integers()">Powers of Two</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+            function integers(){
+                
+                let output = ""
+                let start = Math.pow(2, 0)
+                let end = Math.pow(2, 31)
+
+                for (let i = start; i <= end; i++){
+                    output += Math.pow(2, i) + ", "
+                }
+
+            document.getElementById('output').innerHTML = output;
+            }
+        </script>
+    </body>
+</html>

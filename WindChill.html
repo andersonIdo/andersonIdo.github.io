@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 10: WindChill</h1>
+            
+        </header>
+        <main>
+            
+        
+            <label>Temperature: <input type="text" id="temperature"></label>
+            <label>Wind Speed: <input type="text" id="windspeed"></label>
+            <label><button onclick="doInputOutput()">Wind Chill</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Anderson Gbalo &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function doInputOutput() {
+             //Input: Get input from my computer's clock
+             //Progressing: use if statement with a compound condition
+             //Output: Display the message to the user, Total Amount with the discount.
+         
+             //Input
+             let temperature = parseFloat(document.getElementById('temperature').value);
+             let windspeed = parseFloat(document.getElementById('windspeed').value);
+
+             //Progressing:
+             if ((temperature <= 50 ) && (windspeed >= 3)) {
+                 console.log('windchill')}
+             let windchill = windChill(temperature, windspeed);
+                 
+             
+             document.getElementById('output').innerHTML = windchill ;
+            }
+            function windChill(tempF, speed) {
+                //tempF = (document.getElementById("f").value - 32) * 5 / 9;
+                speed = Math.pow(speed, .16)
+                let result = 35.74 + 0.6215 * tempF - 35.75 * speed + .4275 * tempF * speed ;
+                
+                return result ;
+            }
+        </script>
+    </body>
+</html>

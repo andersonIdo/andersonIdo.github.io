@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 9: integers</h1>
+            
+        </header>
+        <main>
+            
+            <label>start: <input type="text" id="start"></label>
+            <label>end: <input type="text" id="end"></label>
+            <label>divisor: <input type="text" id="divisor"></label>
+            <label><button onclick="answer()">Click here</button></label>
+            <hr>
+            <p><span id="output"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Student Name &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function answer(){
+                  let start= parseInt(document.getElementById('start').value);
+                  let end= parseInt(document.getElementById('end').value);
+                  let divisor = parseInt(document.getElementById('divisor').value);
+                  let Answer = 0
+                  let output = ""
+
+                  for (let i = start; i <= end; i++) {
+                    if ((i % divisor) === 0){
+                      answer = i
+                      output += i + " "
+                    }
+                  }
+             document.getElementById('output').innerHTML = output;
+            }
+        </script>
+    </body>
+</html>
