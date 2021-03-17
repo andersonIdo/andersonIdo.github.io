@@ -31,11 +31,14 @@
              //Input
              let temperature = parseFloat(document.getElementById('temperature').value);
              let windspeed = parseFloat(document.getElementById('windspeed').value);
+             let windchill;
 
              //Progressing:
              if ((temperature <= 50 ) && (windspeed >= 3)) {
-                 console.log('windchill')}
-             let windchill = windChill(temperature, windspeed);
+                 //console.log('windchill')        
+                windchill = windChill(temperature, windspeed)}
+             else 
+                {windchill = "Invalid Numbers!"}
                  
              
              document.getElementById('output').innerHTML = windchill ;
