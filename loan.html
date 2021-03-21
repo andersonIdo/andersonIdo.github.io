@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 </title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 10: Loan</h1>
+            
+        </header>
+        <main>
+            
+            <label>Amount borrowed(principal): <input type="text" id="loan"></label>
+            <label>Annual Interest Rate: <input type="text" id="rate"></label>
+            <label>Number of years: <input type="text" id="numberOfYears"></label>
+            <label>Payments per year: <input type="text" id="paymentsPerYear"></label>
+            <label><button onclick="doPayment()">compute payment</button></label>
+            <p><span id="output1"></span></p>
+
+            <label>Number of payment due date: <input type="text" id="numberofpaymentduedate"></label>
+            <label><button onclick="doBalance()">compute balance</button></label>
+            <hr>
+            
+            <hr>
+            <p><span id="output2"></span></p>
+        </main>
+        <footer>
+            &copy;2021 &bull; Anderson Gbalo &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+             function doPayment() {
+             //Input: Get input from my computer's clock
+             //Progressing: use if statement with a compound condition
+             //Output: Display the message to the user, Total Amount with the discount.
+         
+             //Input
+             
+             let a = parseFloat(document.getElementById('loan').value);
+             let r= parseFloat(document.getElementById('rate').value) / parseFloat(document.getElementById('paymentsPerYear').value);
+             let n = parseFloat(document.getElementById('paymentsPerYear').value) * parseFloat(document.getElementById('numberOfYears').value);
+             let p = parseFloat(computePayment(a,r,n));
+
+             //Progressing:
+             
+             document.getElementById('output1').innerHTML = "$" + p;
+            }
+
+            function doBalance() {
+            let a = parseFloat(document.getElementById('loan').value);
+            let r = parseFloat(document.getElementById('rate').value) / parseFloat(document.getElementById('paymentsPerYear').value);
+            let n = parseFloat(document.getElementById('paymentsPerYear').value) * parseFloat(document.getElementById('numberOfYears').value);
+            let y = parseFloat(document.getElementById('numberOfYears').value)
+            let p = parseFloat(computePayment(a,r,n))
+            let d = parseFloat(document.getElementById('numberofpaymentduedate').value);
+            let b = computeBalance(a,r,y,n,d);
+
+            document.getElementById('output2').innerHTML = "$" + b;
+
+            }
+            function computePayment(loan, interestrateperperiod,periodsPerYear){
+
+            let result = ((loan * interestrateperperiod) / (1 - (Math.pow(1 + interestrateperperiod, - periodsPerYear)))).toFixed(2);
+                
+                return result;
+            }
+
+            function computeBalance(loan, interestrateperperiod, years, periodsPerYear, numberofpaymentduedate){
+
+                let p = computePayment(loan, interestrateperperiod, periodsPerYear)
+                let result = ((loan * (Math.pow((1 + interestrateperperiod), numberofpaymentduedate))) - ((p * (Math.pow((1 + interestrateperperiod), numberofpaymentduedate) - 1)) / interestrateperperiod)).toFixed(2);
+    
+                return result;
+            }
+        </script>
+    </body>
+</html>
